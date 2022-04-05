@@ -1,3 +1,8 @@
+"""
+Color detection
+Refer to https://blog.csdn.net/a13602955218/article/details/84260237
+"""
+
 import numpy as np
 import cv2
 
@@ -9,8 +14,8 @@ while True:
     height = int(cap.get(4))
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    lower_blue = np.array([90, 50, 50])
-    upper_blue = np.array([130, 255, 255])
+    lower_blue = np.array([26, 43, 46])     # in which color space, rgb or hsv?
+    upper_blue = np.array([34, 255, 255])
 
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
